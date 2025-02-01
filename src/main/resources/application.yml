@@ -7,3 +7,6 @@ spring:
   devtools:
     restart:
       enabled: false
+
+server:
+  port: 2222
