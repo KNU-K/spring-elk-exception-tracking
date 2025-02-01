@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/application.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+<!--    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+<!--        <destination>logstash:5044</destination>-->
+<!--        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>-->
+<!--        <KeepAliveDuration>5 minutes</KeepAliveDuration>-->
+<!--    </appender>-->
+
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+<!--        <appender-ref ref="LOGSTASH" />-->
+    </root>
+
+    <!-- info이상만 -->
+    <!-- 로그파일 롤링 찾아보기-->
+    <!-- MDC 정보를 출력-->
+    <!-- 로그파일 접근 권한 고려-->
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

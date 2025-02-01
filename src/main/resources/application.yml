@@ -1,0 +1,9 @@
+logging:
+  level:
+    com.example.springelkexceptiontracking: debug
+    root: debug
+
+spring:
+  devtools:
+    restart:
+      enabled: false
